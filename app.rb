@@ -1,5 +1,7 @@
 require_relative './data_handlers/load_data'
 require_relative './data_handlers/save_data'
+require_relative './classes/movie'
+require_relative './classes/source'
 
 class App
   def initialize
@@ -54,12 +56,19 @@ class App
   end
 
   def run
+    movie1 = Movie.new('Gladiator', '2020-10-13', false)
+    movie2 = Movie.new('Trip to the moon', '1900-05-24', true)
+    @items.push(movie1, movie2)
+    source1 = Source.new('Online shop')
+    @sources << source1
+    source1.add_item(movie1)
+    movie2.add_source(source1)
     loop do
       options
       input = gets.chomp
       if input == '13'
         # save data on JSON files when exit the program
-        # SaveData.save_items(@items)
+        SaveData.save_items(@items)
         # SaveData.save_genres(@genres)
         # SaveData.save_authors(@authors)
         # SaveData.save_labels(@labels)

@@ -21,3 +21,9 @@ puts '***check sources***'
 puts source1.items
 puts movie1.source.name
 puts movie2.source.name
+
+movie1 = Movie.new('Gladiator', '2020-10-13', false)
+movie2 = Movie.new('Trip to the moon', '1900-05-24', true)
+source1 = Source.new('Online shop')
+source1.add_item(movie1)
+movie2.add_source(source1)
