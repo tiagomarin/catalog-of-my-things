@@ -2,7 +2,7 @@ require_relative './classes/movie'
 require_relative './classes/source'
 
 movie1 = Movie.new('Gladiator', '2020-10-13', false)
-movie2 = Movie.new('Trip to the moon','1900-05-24', true)
+movie2 = Movie.new('Trip to the moon', '1900-05-24', true)
 puts '***original movie sources***'
 puts movie1.source
 puts movie2.source
