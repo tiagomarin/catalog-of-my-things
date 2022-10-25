@@ -50,7 +50,7 @@ class App
     when '8' then Source.list_all(@sources)
     when '9' then puts 'Add a book'
     when '10' then puts 'Add a music album'
-    when '11' then Movie.create_movie(@items)
+    when '11' then Movie.create_movie(@items, @sources)
     when '12' then puts 'Add a game'
     end
   end

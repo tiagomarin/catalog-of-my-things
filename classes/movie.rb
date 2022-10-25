@@ -1,4 +1,5 @@
 require_relative './item'
+require_relative './source'
 require 'securerandom'
 require 'terminal-table'
 
@@ -30,30 +31,26 @@ class Movie < Item
     end
 
     table = Terminal::Table.new title: 'All Movies',
-                                headings: %w[Title Author Genre Source Label Publish_date archived], rows: rows
+                                headings: %w[ID Title Genre Author Source Label Publish_Date Archived], rows: rows
     puts table
   end
 
-  def self.create_movie(items)
+  def self.create_movie(items, sources)
     print 'Movie Title: '
     title = gets.chomp.to_s
 
-    puts 'What is the source? '
-    puts 'Select a number from the list'
-    #  call source method
-
-    # -------------------
-    source = gets.chomp.to_s
-
-    print 'When was it published? [yyyy-mm-dd]'
+    print 'When was it published? [yyyy-mm-dd]: '
     author = gets.chomp.to_s
 
-    print 'Is it a silent movie? [Y/N]'
+    print 'Is it a silent movie? [Y/N]: '
     silent = true if gets.chomp.to_s.downcase == 'y'
 
     movie = Movie.new(title, author, silent)
     items.push(movie)
 
+    Source.select_source(sources, movie)
+
     puts 'Movie created successfully'
+    sources
   end
 end

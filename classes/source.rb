@@ -26,4 +26,30 @@ class Source
                                 headings: %w[id Name], rows: rows
     puts table
   end
+
+  def self.select_source(sources, movie)
+    puts 'Time to add a source! '
+    puts 'This is the list of sources available:'
+    list_all(sources)
+
+    puts 'Choose an option'
+    puts '[ 1 ] Select a source from the list'
+    puts '[ 2 ] Add a new source'
+    source_option = gets.chomp.to_i
+
+    if source_option == 1
+      print 'ID of the source: '
+      id_source = gets.chomp.to_i
+      sources.each do |source|
+        movie.add_source(source) if source.id == id_source
+      end
+    else
+      print 'Name: '
+      name = gets.chomp
+      source = Source.new(name)
+      source.add_item(movie)
+      sources.push(source)
+    end
+    sources
+  end
 end
