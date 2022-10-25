@@ -7,6 +7,7 @@ class SaveData
       next unless item.instance_of?(Movie)
 
       {
+        class: item.class.name,
         id: item.id,
         title: item.title,
         genre: item.genre,

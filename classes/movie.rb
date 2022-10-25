@@ -1,10 +1,11 @@
 require_relative './item'
+require 'securerandom'
 
 class Movie < Item
   attr_accessor :silent
 
-  def initialize(title, date, silent)
-    super(title, date)
+  def initialize(title, date, silent, id = SecureRandom.uuid)
+    super(title, date, id)
     @silent = silent
   end
 

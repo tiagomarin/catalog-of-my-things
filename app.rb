@@ -5,13 +5,13 @@ require_relative './classes/source'
 
 class App
   def initialize
-    @items = []
+    # @items = []
     @genres = []
     @authors = []
     @labels = []
     @sources = []
 
-    # @items = LoadData.read_items || []
+    @items = LoadData.load_items || []
     # @genres = LoadData.read_genres || []
     # @authors = LoadData.read_authors || []
     # @labels = LoadData.read_labels || []
@@ -56,13 +56,13 @@ class App
   end
 
   def run
-    movie1 = Movie.new('Gladiator', '2020-10-13', false)
-    movie2 = Movie.new('Trip to the moon', '1900-05-24', true)
-    @items.push(movie1, movie2)
-    source1 = Source.new('Online shop')
-    @sources << source1
-    source1.add_item(movie1)
-    movie2.add_source(source1)
+    # movie1 = Movie.new('Gladiator', '2020-10-13', false)
+    # movie2 = Movie.new('Trip to the moon', '1900-05-24', true)
+    # @items.push(movie1, movie2)
+    # source1 = Source.new('Online shop')
+    # @sources << source1
+    # source1.add_item(movie1)
+    # movie2.add_source(source1)
     loop do
       options
       input = gets.chomp
