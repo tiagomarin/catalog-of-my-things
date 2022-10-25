@@ -7,13 +7,13 @@ class SaveData
       next unless item.instance_of?(Movie)
 
       {
-        class: item.class.name,
+        type: item.class.name,
         id: item.id,
         title: item.title,
-        genre: item.genre,
-        author: item.author,
-        source: item.source,
-        label: item.label,
+        genre_id: item.genre ? item.genre.id : '',
+        author_id: item.author ? item.author.id : '',
+        source_id: item.source ? item.source.id : '',
+        label_id: item.label ? item.label.id : '',
         publish_date: item.publish_date,
         archived: item.archived,
         silent: item.silent

@@ -1,4 +1,6 @@
+require_relative '../classes/movie'
 require 'json'
+require 'pry'
 
 class LoadData
   def self.load_items
@@ -6,9 +8,9 @@ class LoadData
     items_file = File.open(file_path)
     items_arr = []
     JSON.parse(items_file.read).each do |item|
-      case item.class
+      case item['type']
       when 'Movie'
-        items_arr << Movie.new(item.title, item.date, item.silent, item.id)
+        items_arr.push(Movie.new(item['title'], item['date'], item['silent'], item['id']))
       when 'Book'
         puts 'book'
       when 'Game'
@@ -17,6 +19,7 @@ class LoadData
         puts 'music album'
       end
     end
+    pp "items array:  #{items_arr}"
     items_arr
   end
 end

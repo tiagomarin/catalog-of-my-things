@@ -12,10 +12,10 @@ class App
     @sources = []
 
     @items = LoadData.load_items || []
-    # @genres = LoadData.read_genres || []
-    # @authors = LoadData.read_authors || []
-    # @labels = LoadData.read_labels || []
-    # @sources =LoadData.read_sources || []
+    # @genres = LoadData.load_genres || []
+    # @authors = LoadData.load_authors || []
+    # @labels = LoadData.load_labels || []
+    # @sources =LoadData.load_sources || []
   end
 
   def options
@@ -42,15 +42,15 @@ class App
     case input
     when '1' then puts 'List all books'
     when '2' then puts 'List all music albums'
-    when '3' then puts 'List all movies'
+    when '3' then Movie.list_all(@items)
     when '4' then puts 'List of games'
     when '5' then puts 'List all genres'
     when '6' then puts 'List all labels'
     when '7' then puts 'List all authors'
-    when '8' then puts 'List all sources'
+    when '8' then Source.list_all(@sources)
     when '9' then puts 'Add a book'
     when '10' then puts 'Add a music album'
-    when '11' then puts 'Add a movie'
+    when '11' then Movie.create_movie(@items)
     when '12' then puts 'Add a game'
     end
   end
