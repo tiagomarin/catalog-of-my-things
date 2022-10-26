@@ -33,4 +33,21 @@ class MusicAlbum < Item
                                 headings: %w[ID Title Genre Author Source Label Publish_Date Archived], rows: rows
     puts table
   end
+
+  def self.create_music_album(items, genres)
+    print 'Music Album title: '
+    title = gets.chomp.to_s
+
+    print 'When was it published? [yyyy-mm-dd]: '
+    published = gets.chomp.to_s
+
+    print 'Is it available on Spotify? [Y/N]: '
+    on_spotify = true if gets.chomp.to_s.downcase == 'y'
+
+    music_album = MusicAlbum.new(title, published, on_spotify)
+    items.push(music_album)
+
+    puts 'Music Album created successfully'
+    genres
+  end
 end
