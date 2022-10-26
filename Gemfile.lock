@@ -41,6 +41,7 @@ GEM
     unicode-display_width (2.3.0)
 
 PLATFORMS
+  x64-mingw-ucrt
   x86_64-linux
 
 DEPENDENCIES
