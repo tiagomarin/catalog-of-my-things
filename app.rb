@@ -80,7 +80,7 @@ class App
       if input == '13'
         # save data on JSON files when exit the program
         SaveData.save_items(@items)
-        # SaveData.save_genres(@genres)
+        SaveData.save_genres(@genres)
         # SaveData.save_authors(@authors)
         # SaveData.save_labels(@labels)
         SaveData.save_sources(@sources)

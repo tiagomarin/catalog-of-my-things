@@ -37,9 +37,9 @@
   },
   {
     "type": "MusicAlbum",
-    "id": 447,
+    "id": 506,
     "title": "Music",
-    "genre_id": 609,
+    "genre_id": 448,
     "author_id": "",
     "source_id": "",
     "label_id": "",
@@ -49,9 +49,9 @@
   },
   {
     "type": "MusicAlbum",
-    "id": 11,
+    "id": 707,
     "title": "Motomami",
-    "genre_id": 526,
+    "genre_id": 830,
     "author_id": "",
     "source_id": "",
     "label_id": "",

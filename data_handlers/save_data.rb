@@ -54,4 +54,18 @@ class SaveData
     end
     File.write(file_path, JSON.pretty_generate(sources_data))
   end
+
+  def self.save_genres(genres)
+    file_path = './data/genres.json'
+    genres_data = genres.map do |e|
+      items_ids = []
+      e.items.each { |item| items_ids.push(item.id) }
+      {
+        id: e.id,
+        name: e.name,
+        items_ids: items_ids
+      }
+    end
+    File.write(file_path, JSON.pretty_generate(genres_data))
+  end
 end
