@@ -23,7 +23,18 @@ class SaveData
       when 'Game'
         puts 'game'
       else
-        puts 'music album'
+        {
+          type: item.class.name,
+          id: item.id,
+          title: item.title,
+          genre_id: item.genre ? item.genre.id : '',
+          author_id: item.author ? item.author.id : '',
+          source_id: item.source ? item.source.id : '',
+          label_id: item.label ? item.label.id : '',
+          publish_date: item.publish_date,
+          archived: item.archived,
+          on_spotify: item.on_spotify
+        }
       end
     end
     json = JSON.pretty_generate(items_data)
