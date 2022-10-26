@@ -2,6 +2,8 @@ require_relative './data_handlers/load_data'
 require_relative './data_handlers/save_data'
 require_relative './classes/movie'
 require_relative './classes/source'
+require_relative './classes/music_album'
+require_relative './classes/genre'
 
 class App
   def initialize
@@ -42,7 +44,7 @@ class App
   def select_action(input)
     case input
     when '1' then puts 'List all books'
-    when '2' then puts 'List all music albums'
+    when '2' then MusicAlbum.list_all(@items)
     when '3' then Movie.list_all(@items)
     when '4' then puts 'List of games'
     when '5' then puts 'List all genres'
@@ -64,6 +66,13 @@ class App
     # @sources << source1
     # source1.add_item(movie1)
     # movie2.add_source(source1)
+    # album01 = MusicAlbum.new('Music', '2000-09-18', true)
+    # album02 = MusicAlbum.new('Motomami', '2022-03-18', true)
+    # @items.push(album01, album02)
+    # genre01 = Genre.new('Alternative')
+    # genre02 = Genre.new('Pop')
+    # genre01.add_item(album01)
+    # genre02.add_item(album02)
     loop do
       options
       input = gets.chomp
