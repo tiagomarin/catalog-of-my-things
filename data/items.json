@@ -1,11 +1,11 @@
 [
   {
     "type": "Movie",
-    "id": 553,
+    "id": 666,
     "title": "Gladiator",
     "genre_id": "",
     "author_id": "",
-    "source_id": "",
+    "source_id": 543,
     "label_id": "",
     "publish_date": null,
     "archived": false,
@@ -13,50 +13,14 @@
   },
   {
     "type": "Movie",
-    "id": 143,
+    "id": 117,
     "title": "Trip to the moon",
     "genre_id": "",
     "author_id": "",
-    "source_id": "",
+    "source_id": 543,
     "label_id": "",
     "publish_date": null,
     "archived": false,
     "silent": true
-  },
-  {
-    "type": "Movie",
-    "id": 604,
-    "title": "Tiago is the best",
-    "genre_id": "",
-    "author_id": "",
-    "source_id": "",
-    "label_id": "",
-    "publish_date": null,
-    "archived": false,
-    "silent": null
-  },
-  {
-    "type": "Movie",
-    "id": 68,
-    "title": "Interstellar",
-    "genre_id": "",
-    "author_id": "",
-    "source_id": "",
-    "label_id": "",
-    "publish_date": null,
-    "archived": false,
-    "silent": null
-  },
-  {
-    "type": "Movie",
-    "id": 888,
-    "title": "Titanic",
-    "genre_id": "",
-    "author_id": "",
-    "source_id": 978,
-    "label_id": "",
-    "publish_date": "1999-02-24",
-    "archived": false,
-    "silent": null
   }
 ]

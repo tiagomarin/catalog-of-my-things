@@ -15,7 +15,7 @@ class App
     # @genres = LoadData.load_genres || []
     # @authors = LoadData.load_authors || []
     # @labels = LoadData.load_labels || []
-    # @sources =LoadData.load_sources || []
+    @sources = LoadData.load_sources(@items) || []
   end
 
   def options
@@ -72,7 +72,7 @@ class App
         # SaveData.save_genres(@genres)
         # SaveData.save_authors(@authors)
         # SaveData.save_labels(@labels)
-        # SaveData.save_sources(@sources)
+        SaveData.save_sources(@sources)
         system 'clear'
         puts 'See you next time!'
         break
