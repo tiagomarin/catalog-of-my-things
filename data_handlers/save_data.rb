@@ -25,7 +25,7 @@ class SaveData
       else
         puts 'music album'
       end
-    end  
+    end
     json = JSON.pretty_generate(items_data)
     File.write(file_path, json)
   end
