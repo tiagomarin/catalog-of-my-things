@@ -66,14 +66,14 @@ class App
     # @sources << source1
     # source1.add_item(movie1)
     # movie2.add_source(source1)
-    album01 = MusicAlbum.new('Music', '2000-09-18', true)
-    album02 = MusicAlbum.new('Motomami', '2022-03-18', true)
-    @items.push(album01, album02)
-    genre01 = Genre.new('Alternative')
-    genre02 = Genre.new('Pop')
-    genre01.add_item(album01)
-    genre02.add_item(album02)
-    @genres.push(genre01, genre02)
+    # album01 = MusicAlbum.new('Music', '2000-09-18', true)
+    # album02 = MusicAlbum.new('Motomami', '2022-03-18', true)
+    # @items.push(album01, album02)
+    # genre01 = Genre.new('Alternative')
+    # genre02 = Genre.new('Pop')
+    # genre01.add_item(album01)
+    # genre02.add_item(album02)
+    # @genres.push(genre01, genre02)
     loop do
       options
       input = gets.chomp

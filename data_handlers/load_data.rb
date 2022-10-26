@@ -1,5 +1,6 @@
 require_relative '../classes/movie'
 require_relative '../classes/source'
+require_relative '../classes/music_album'
 require 'json'
 require 'pry'
 
@@ -17,7 +18,7 @@ class LoadData
       when 'Game'
         puts 'game'
       else
-        puts 'music album'
+        items_arr.push(MusicAlbum.new(item['title'], item['publish_date'], item['on_spotify'], item['id']))
       end
     end
     items_arr
