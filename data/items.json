@@ -1,0 +1,38 @@
+[
+  {
+    "type": "Movie",
+    "id": 666,
+    "title": "Gladiator",
+    "genre_id": "",
+    "author_id": "",
+    "source_id": 543,
+    "label_id": "",
+    "publish_date": "2002-03-03",
+    "archived": false,
+    "silent": false
+  },
+  {
+    "type": "Movie",
+    "id": 117,
+    "title": "Trip to the moon",
+    "genre_id": "",
+    "author_id": "",
+    "source_id": 543,
+    "label_id": "",
+    "publish_date": "1905-10-12",
+    "archived": false,
+    "silent": true
+  },
+  {
+    "type": "Movie",
+    "id": 573,
+    "title": "Amelie",
+    "genre_id": "",
+    "author_id": "",
+    "source_id": 755,
+    "label_id": "",
+    "publish_date": "1998-05-21",
+    "archived": false,
+    "silent": null
+  }
+]
