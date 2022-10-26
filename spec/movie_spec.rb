@@ -1,7 +1,5 @@
 require_relative '../classes/movie'
-require 'securerandom'
 
-id_length = SecureRandom.uuid.length
 movie1 = Movie.new('Gladiator', '2020-10-13', false)
 movie2 = Movie.new('Trip to the moon', '1900-05-24', true)
 
@@ -17,10 +15,6 @@ describe 'test Movie constructor ' do
   it 'movie object should have an id' do
     expect(movie1.id.nil?).to eq(false)
     expect(movie2.id.nil?).to eq(false)
-  end
-  it 'movie object id should be in a certain length' do
-    expect(movie1.id.length).to eq(id_length)
-    expect(movie1.id.length).to eq(id_length)
   end
   it 'movie object should have a date' do
     expect(movie1.publish_date).to eq('2020-10-13')

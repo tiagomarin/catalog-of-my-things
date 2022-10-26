@@ -1,8 +1,6 @@
 require_relative '../classes/source'
 require_relative '../classes/movie'
-require 'securerandom'
 
-id_length = SecureRandom.uuid.length
 source1 = Source.new('Online Shop')
 
 describe 'test Source constructor ' do
@@ -14,9 +12,6 @@ describe 'test Source constructor ' do
   end
   it 'Source object should have an id' do
     expect(source1.id.nil?).to eq(false)
-  end
-  it 'Source object id should be in a certain length' do
-    expect(source1.id.length).to eq(id_length)
   end
   it 'Source object should have an empty items array' do
     expect(source1.items.empty?).to eq(true)
