@@ -1,10 +1,7 @@
 require_relative '../classes/book'
-require_relative '../classes/label'
 
 book1 = Book.new('Once Uppon a Time', '2000-09-18', 'Marvel', 'good')
 book2 = Book.new('The Great Wolf', '2022-03-18', 'Klaus', 'bad')
-label1 = Label.new('Indy', 'orange')
-label2 = Label.new('Romance', 'blue')
 
 describe 'test book constructor ' do
   it 'takes three parameter and returns a book object' do
