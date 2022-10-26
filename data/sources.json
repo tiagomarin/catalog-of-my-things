@@ -1,17 +1,10 @@
 [
   {
-    "id": 543,
+    "id": 430,
     "name": "Online shop",
     "items_ids": [
-      666,
-      117
-    ]
-  },
-  {
-    "id": 755,
-    "name": "Netflix",
-    "items_ids": [
-      573
+      309,
+      255
     ]
   }
 ]

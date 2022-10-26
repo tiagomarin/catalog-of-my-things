@@ -10,15 +10,14 @@ class App
     # @items = []
     @genres = []
     @authors = []
-    @labels = []
+    # @labels = []
     # @sources = []
 
     @items = LoadData.load_items || []
     # @genres = LoadData.load_genres || []
     # @authors = LoadData.load_authors || []
-    # @labels = LoadData.load_labels || []
+    @labels = LoadData.load_labels(@items) || []
     @sources = LoadData.load_sources(@items) || []
-    p @items
   end
 
   def options
@@ -64,25 +63,29 @@ class App
     # -------------------------------------------------------------------------
 
     # MOVIE & SOURCE
-
     # movie1 = Movie.new('Gladiator', '2020-10-13', false)
     # movie2 = Movie.new('Trip to the moon', '1900-05-24', true)
     # @items.push(movie1, movie2)
+
     # source1 = Source.new('Online shop')
     # @sources << source1
     # source1.add_item(movie1)
+
     # movie2.add_source(source1)
 
     # BOOK AND LABEL
-    book1 = Book.new('Once Uppon a Time', '2000-09-18', 'Marvel', 'good')
-    book2 = Book.new('The Great Wolf', '2022-03-18', 'Klaus', 'bad')
-    @items << book1
-    @items << book2
-    label1 = Label.new('Indy', 'orange')
-    label2 = Label.new('Romance', 'blue')
-    @labels << label1
-    @labels << label2
+    # book1 = Book.new('Once Uppon a Time', '2000-09-18', 'Marvel', 'good')
+    # book2 = Book.new('The Great Wolf', '2022-03-18', 'Klaus', 'bad')
+    # @items << book1
+    # @items << book2
 
+    # label1 = Label.new('Indy', 'orange')
+    # label2 = Label.new('Romance', 'blue')
+    # @labels << label1
+    # @labels << label2
+
+    # book1.add_label(label1)
+    # book2.add_label(label2)
     # -------------------------------------------------------------------------
     loop do
       options
@@ -92,9 +95,9 @@ class App
         SaveData.save_items(@items)
         # SaveData.save_genres(@genres)
         # SaveData.save_authors(@authors)
-        # SaveData.save_labels(@labels)
+        SaveData.save_labels(@labels)
         SaveData.save_sources(@sources)
-        system 'clear'
+        # system 'clear'
         puts 'See you next time!'
         break
       end
