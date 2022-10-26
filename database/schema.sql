@@ -11,5 +11,5 @@ CREATE TABLE movies(
     silent BOOLEAN,
     sources_ids INT,
     PRIMARY KEY(id),
-    CONSTRAINT fk_sources FOREIGN KEY(sources_id) REFERENCES sources(id)
+    CONSTRAINT fk_sources FOREIGN KEY(sources_ids) REFERENCES sources(id)
 );
