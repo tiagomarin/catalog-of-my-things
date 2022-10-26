@@ -4,21 +4,28 @@ class SaveData
   def self.save_items(items)
     file_path = './data/items.json'
     items_data = items.map do |item|
-      next unless item.instance_of?(Movie)
-
-      {
-        type: item.class.name,
-        id: item.id,
-        title: item.title,
-        genre_id: item.genre ? item.genre.id : '',
-        author_id: item.author ? item.author.id : '',
-        source_id: item.source ? item.source.id : '',
-        label_id: item.label ? item.label.id : '',
-        publish_date: item.publish_date,
-        archived: item.archived,
-        silent: item.silent
-      }
-    end
+      case item.class.name
+      when 'Movie'
+        {
+          type: item.class.name,
+          id: item.id,
+          title: item.title,
+          genre_id: item.genre ? item.genre.id : '',
+          author_id: item.author ? item.author.id : '',
+          source_id: item.source ? item.source.id : '',
+          label_id: item.label ? item.label.id : '',
+          publish_date: item.publish_date,
+          archived: item.archived,
+          silent: item.silent
+        }
+      when 'Book'
+        puts 'book'
+      when 'Game'
+        puts 'game'
+      else
+        puts 'music album'
+      end
+    end  
     json = JSON.pretty_generate(items_data)
     File.write(file_path, json)
   end

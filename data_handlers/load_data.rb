@@ -11,7 +11,7 @@ class LoadData
     JSON.parse(items_file.read).each do |item|
       case item['type']
       when 'Movie'
-        items_arr.push(Movie.new(item['title'], item['date'], item['silent'], item['id']))
+        items_arr.push(Movie.new(item['title'], item['publish_date'], item['silent'], item['id']))
       when 'Book'
         puts 'book'
       when 'Game'
@@ -20,7 +20,6 @@ class LoadData
         puts 'music album'
       end
     end
-    pp "items array:  #{items_arr}"
     items_arr
   end
 
@@ -40,7 +39,6 @@ class LoadData
       end
       sources_arr.push(new_source)
     end
-    pp "sources array:  #{sources_arr}"
     sources_arr
   end
 end

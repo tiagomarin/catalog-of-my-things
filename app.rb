@@ -9,13 +9,14 @@ class App
     @genres = []
     @authors = []
     @labels = []
-    @sources = []
+    # @sources = []
 
     @items = LoadData.load_items || []
     # @genres = LoadData.load_genres || []
     # @authors = LoadData.load_authors || []
     # @labels = LoadData.load_labels || []
     @sources = LoadData.load_sources(@items) || []
+    p @items
   end
 
   def options
