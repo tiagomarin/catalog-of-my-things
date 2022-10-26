@@ -47,7 +47,7 @@ class App
     when '2' then MusicAlbum.list_all(@items)
     when '3' then Movie.list_all(@items)
     when '4' then puts 'List of games'
-    when '5' then puts 'List all genres'
+    when '5' then Genre.list_all(@genres)
     when '6' then puts 'List all labels'
     when '7' then puts 'List all authors'
     when '8' then Source.list_all(@sources)
@@ -66,13 +66,14 @@ class App
     # @sources << source1
     # source1.add_item(movie1)
     # movie2.add_source(source1)
-    # album01 = MusicAlbum.new('Music', '2000-09-18', true)
-    # album02 = MusicAlbum.new('Motomami', '2022-03-18', true)
-    # @items.push(album01, album02)
-    # genre01 = Genre.new('Alternative')
-    # genre02 = Genre.new('Pop')
-    # genre01.add_item(album01)
-    # genre02.add_item(album02)
+    album01 = MusicAlbum.new('Music', '2000-09-18', true)
+    album02 = MusicAlbum.new('Motomami', '2022-03-18', true)
+    @items.push(album01, album02)
+    genre01 = Genre.new('Alternative')
+    genre02 = Genre.new('Pop')
+    genre01.add_item(album01)
+    genre02.add_item(album02)
+    @genres.push(genre01, genre02)
     loop do
       options
       input = gets.chomp

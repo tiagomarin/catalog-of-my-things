@@ -14,4 +14,16 @@ class Genre
     @items.push(item)
     item.add_genre(self)
   end
+
+  def self.list_all(genres)
+    rows = []
+    genres.each do |genre|
+      rows << [genre.id,
+               genre.name]
+    end
+
+    table = Terminal::Table.new title: 'All Genres',
+                                headings: %w[id Name], rows: rows
+    puts table
+  end
 end
