@@ -1,4 +1,5 @@
 require_relative './item'
+require_relative './genre'
 require 'securerandom'
 require 'terminal-table'
 
@@ -46,6 +47,8 @@ class MusicAlbum < Item
 
     music_album = MusicAlbum.new(title, published, on_spotify)
     items.push(music_album)
+
+    Genre.select_genre(genres, music_album)
 
     puts 'Music Album created successfully'
     genres
