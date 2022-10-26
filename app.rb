@@ -8,17 +8,17 @@ require_relative './classes/genre'
 class App
   def initialize
     # @items = []
-    @genres = []
+    # @genres = []
     @authors = []
     @labels = []
     # @sources = []
 
     @items = LoadData.load_items || []
-    # @genres = LoadData.load_genres || []
+    @genres = LoadData.load_genres(@items) || []
     # @authors = LoadData.load_authors || []
     # @labels = LoadData.load_labels || []
     @sources = LoadData.load_sources(@items) || []
-    p @items
+    # p @items
   end
 
   def options
