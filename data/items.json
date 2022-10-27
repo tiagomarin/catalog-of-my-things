@@ -34,5 +34,29 @@
     "publish_date": "1998-05-21",
     "archived": false,
     "silent": null
+  },
+  {
+    "type": "MusicAlbum",
+    "id": 506,
+    "title": "Music",
+    "genre_id": 448,
+    "author_id": "",
+    "source_id": "",
+    "label_id": "",
+    "publish_date": "2000-09-18",
+    "archived": false,
+    "on_spotify": true
+  },
+  {
+    "type": "MusicAlbum",
+    "id": 707,
+    "title": "Motomami",
+    "genre_id": 830,
+    "author_id": "",
+    "source_id": "",
+    "label_id": "",
+    "publish_date": "2022-03-18",
+    "archived": false,
+    "on_spotify": true
   }
 ]
