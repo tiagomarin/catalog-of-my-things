@@ -42,5 +42,15 @@
     "cover_state": "bad",
     "archived": false,
     "label_id": 417
+  },
+  {
+    "type": "Book",
+    "id": 525,
+    "title": "Lord Of The Rings",
+    "publish_date": "1988-10-08",
+    "publisher": "J.R.R. Tolkien",
+    "cover_state": "good",
+    "archived": false,
+    "label_id": 486
   }
 ]

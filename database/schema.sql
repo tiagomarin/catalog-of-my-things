@@ -16,11 +16,11 @@ CREATE TABLE movies(
 
 CREATE TABLE books(
     id INT GENERATED ALWAYS AS IDENTITY,
+    title VARCHAR(80),
     publish_date DATE NOT NULL,
     archived BOOLEAN,
     cover_state VARCHAR(50),
     publisher VARCHAR(80),
-    book_color VARCHAR(30),
     labels_id INT,
     PRIMARY KEY(id),
     CONSTRAINT fk_labels FOREIGN KEY(labels_id) REFERENCES labels(id)

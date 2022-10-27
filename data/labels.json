@@ -14,5 +14,13 @@
     "items_ids": [
       817
     ]
+  },
+  {
+    "id": 486,
+    "title": "Adventure",
+    "color": "green",
+    "items_ids": [
+      525
+    ]
   }
 ]
