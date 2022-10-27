@@ -1,5 +1,7 @@
 require_relative '../classes/movie'
 require_relative '../classes/source'
+require_relative '../classes/music_album'
+require_relative '../classes/genre'
 require 'json'
 require 'pry'
 
@@ -21,7 +23,7 @@ class LoadData
       when 'Game'
         puts 'game'
       else
-        puts 'music album'
+        items_arr.push(MusicAlbum.new(item['title'], item['publish_date'], item['on_spotify'], item['id']))
       end
     end
     items_arr
@@ -63,5 +65,23 @@ class LoadData
       labels_arr.push(new_label)
     end
     labels_arr
+  end
+  def self.load_genres(items)
+    file_path = './data/genres.json'
+    genres_file = File.open(file_path)
+
+    genres_arr = []
+
+    JSON.parse(genres_file.read).each do |genre|
+      new_genre = Genre.new(genre['name'], genre['id'])
+
+      genre['items_ids'].each do |item_id|
+        items.each do |item|
+          new_genre.add_item(item) if item.id == item_id
+        end
+      end
+      genres_arr.push(new_genre)
+    end
+    genres_arr
   end
 end
