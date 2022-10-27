@@ -48,7 +48,7 @@ class Label
       title = gets.chomp
       print 'Label color: '
       color = gets.chomp
-      label = label.new(title, color)
+      label = Label.new(title, color)
       puts 'Label created successfully'
       puts ''
       label.add_item(book)
