@@ -51,6 +51,5 @@ class Movie < Item
     Source.select_source(sources, movie)
 
     puts 'Movie created successfully'
-    sources
   end
 end
