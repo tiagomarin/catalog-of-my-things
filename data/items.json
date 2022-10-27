@@ -1,39 +1,47 @@
 [
   {
     "type": "Movie",
-    "id": 666,
+    "id": 309,
     "title": "Gladiator",
     "genre_id": "",
     "author_id": "",
-    "source_id": 543,
+    "source_id": 430,
     "label_id": "",
-    "publish_date": "2002-03-03",
+    "publish_date": "2020-10-13",
     "archived": false,
     "silent": false
   },
   {
     "type": "Movie",
-    "id": 117,
+    "id": 255,
     "title": "Trip to the moon",
     "genre_id": "",
     "author_id": "",
-    "source_id": 543,
+    "source_id": 430,
     "label_id": "",
-    "publish_date": "1905-10-12",
+    "publish_date": "1900-05-24",
     "archived": false,
     "silent": true
   },
   {
-    "type": "Movie",
-    "id": 573,
-    "title": "Amelie",
-    "genre_id": "",
-    "author_id": "",
-    "source_id": 755,
-    "label_id": "",
-    "publish_date": "1998-05-21",
+    "type": "Book",
+    "id": 141,
+    "title": "Once Uppon a Time",
+    "publish_date": "2000-09-18",
+    "publisher": "Marvel",
+    "cover_state": "good",
     "archived": false,
-    "silent": null
+    "label_id": 629
+  },
+  {
+    "type": "Book",
+    "id": 817,
+    "title": "The Great Wolf",
+    "publish_date": "2022-03-18",
+    "publisher": "Klaus",
+    "cover_state": "bad",
+    "archived": false,
+    "label_id": 417
   },
   {
     "type": "MusicAlbum",

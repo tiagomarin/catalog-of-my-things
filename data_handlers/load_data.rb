@@ -15,7 +15,11 @@ class LoadData
       when 'Movie'
         items_arr.push(Movie.new(item['title'], item['publish_date'], item['silent'], item['id']))
       when 'Book'
-        puts 'book'
+        items_arr.push(Book.new(item['title'],
+                                item['publish_date'],
+                                item['publisher'],
+                                item['cover_state'],
+                                item['id']))
       when 'Game'
         puts 'game'
       else
@@ -44,6 +48,24 @@ class LoadData
     sources_arr
   end
 
+  def self.load_labels(items)
+    file_path = './data/labels.json'
+    labels_file = File.open(file_path)
+
+    labels_arr = []
+
+    JSON.parse(labels_file.read).each do |label|
+      new_label = Label.new(label['title'], label['color'], label['id'])
+
+      label['items_ids'].each do |item_id|
+        items.each do |item|
+          new_label.add_item(item) if item.id == item_id
+        end
+      end
+      labels_arr.push(new_label)
+    end
+    labels_arr
+  end
   def self.load_genres(items)
     file_path = './data/genres.json'
     genres_file = File.open(file_path)
