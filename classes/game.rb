@@ -3,7 +3,7 @@ require 'securerandom'
 require 'date'
 
 class Game < Item
-  attr_accessor :multiplayer, :last_played_at, :publish_date
+  attr_accessor :multiplayer, :last_played_at
   attr_reader :id
 
   def initialize(title, publish_date, multiplayer, last_played_at, id = SecureRandom.random_number(1000))
