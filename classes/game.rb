@@ -35,16 +35,16 @@ class Game < Item
 
       rows << [item.id,
                item.title,
-               item.genre ? item.genre.name : '',
                item.author ? item.author.first_name : '',
-               item.source ? item.source.name : '',
-               item.label ? item.label.title : '',
+               item.multiplayer,
+               item.last_played_at,
                item.publish_date,
                item.archived]
     end
 
     table = Terminal::Table.new title: 'All Games',
-                                headings: %w[ID Title Genre Author Source Label Publish_Date Archived], rows: rows
+                                headings: %w[ID Title Author Multiplayer Last_played_at Publish_Date Archived],
+                                rows: rows
     puts table
   end
 

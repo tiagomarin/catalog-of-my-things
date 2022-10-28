@@ -1,10 +1,18 @@
 [
   {
-    "id": 96,
-    "first_name": "erick",
-    "last_name": "johnson",
+    "id": 620,
+    "first_name": "CD Project Red",
+    "last_name": "-",
     "items_ids": [
-      708
+      14
+    ]
+  },
+  {
+    "id": 277,
+    "first_name": "Erick",
+    "last_name": "Johnson",
+    "items_ids": [
+      623
     ]
   }
 ]
