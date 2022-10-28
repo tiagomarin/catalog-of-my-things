@@ -3,6 +3,18 @@
 # CATALOG OF MY THINGS
 This project is a console app that helps you to keep record of different types of things you own: books, music albums, movies, and games. Everything was based on a given UML class diagram (see below). The data is stored in JSON files but there is also a database prepared with tables structure analogical to the program's class structure.
 
+## Screenshot:
+<br>
+
+![](catalog-of-my-things-screeshot.png)
+
+<br>
+
+## Video presentation
+ [Available here](https://drive.google.com/file/d/1b2hxXDXalsIp5HQG9hpA833ANil5JNpz/view?usp=sharing)
+
+<br>
+
 ## Built With
 
 <img alt="React Badge" src="https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white"><br>

@@ -54,7 +54,7 @@ class Book < Item
                item.author ? item.author.first_name : '',
                item.source ? item.source.name : '']
     end
-
+    # require 'terminal-table'
     table = Terminal::Table.new title: 'All Books',
                                 headings: %w[ID Title Cover_State Publisher Publish_Date
                                              Archived Label Genre Author Source],
