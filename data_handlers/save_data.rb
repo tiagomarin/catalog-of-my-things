@@ -5,59 +5,70 @@ class SaveData
     file_path = './data/items.json'
     items_data = items.map do |item|
       case item.class.name
-      when 'Movie'
-        {
-          type: item.class.name,
-          id: item.id,
-          title: item.title,
-          genre_id: item.genre ? item.genre.id : '',
-          author_id: item.author ? item.author.id : '',
-          source_id: item.source ? item.source.id : '',
-          label_id: item.label ? item.label.id : '',
-          publish_date: item.publish_date,
-          archived: item.archived,
-          silent: item.silent
-        }
-      when 'Book'
-        {
-          type: item.class.name,
-          id: item.id,
-          title: item.title,
-          publish_date: item.publish_date,
-          publisher: item.publisher,
-          cover_state: item.cover_state,
-          archived: item.archived,
-          label_id: item.label ? item.label.id : ''
-        }
-      when 'Game'
-        {
-          type: item.class.name,
-          id: item.id,
-          title: item.title,
-          publish_date: item.publish_date,
-          multiplayer: item.multiplayer,
-          last_played_at: item.last_played_at,
-          author: item.author ? item.author.id : ''
-        }
-      when 'Music Album'
-        puts 'Music'
+      when 'Movie' then save_movie(item)
+      when 'Book' then save_book(item)
+      when 'Game' then save_game(item)
       else
-        {
-          type: item.class.name,
-          id: item.id,
-          title: item.title,
-          genre_id: item.genre ? item.genre.id : '',
-          author_id: item.author ? item.author.id : '',
-          source_id: item.source ? item.source.id : '',
-          label_id: item.label ? item.label.id : '',
-          publish_date: item.publish_date,
-          archived: item.archived,
-          on_spotify: item.on_spotify
-        }
+        save_music_album(item)
       end
     end
     json = JSON.pretty_generate(items_data)
     File.write(file_path, json)
+  end
+
+  def self.save_movie(item)
+    {
+      type: item.class.name,
+      id: item.id,
+      title: item.title,
+      genre_id: item.genre ? item.genre.id : '',
+      author_id: item.author ? item.author.id : '',
+      source_id: item.source ? item.source.id : '',
+      label_id: item.label ? item.label.id : '',
+      publish_date: item.publish_date,
+      archived: item.archived,
+      silent: item.silent
+    }
+  end
+
+  def self.save_book(item)
+    {
+      type: item.class.name,
+      id: item.id,
+      title: item.title,
+      publish_date: item.publish_date,
+      publisher: item.publisher,
+      cover_state: item.cover_state,
+      archived: item.archived,
+      label_id: item.label ? item.label.id : ''
+    }
+  end
+
+  def self.save_game(item)
+    {
+      type: item.class.name,
+      id: item.id,
+      title: item.title,
+      publish_date: item.publish_date,
+      multiplayer: item.multiplayer,
+      last_played_at: item.last_played_at,
+      author: item.author ? item.author.id : ''
+    }
+  end
+
+  def self.save_music_album(item)
+    {
+      type: item.class.name,
+      id: item.id,
+      title: item.title,
+      genre_id: item.genre ? item.genre.id : '',
+      author_id: item.author ? item.author.id : '',
+      source_id: item.source ? item.source.id : '',
+      label_id: item.label ? item.label.id : '',
+      publish_date: item.publish_date,
+      archived: item.archived,
+      on_spotify: item.on_spotify
+    }
   end
 
   def self.save_sources(sources)

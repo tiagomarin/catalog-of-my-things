@@ -22,16 +22,18 @@ class Movie < Item
 
       rows << [item.id,
                item.title,
+               item.silent,
+               item.source ? item.source.name : '',
+               item.publish_date,
+               item.archived,
                item.genre ? item.genre.name : '',
                item.author ? item.author.first_name : '',
-               item.source ? item.source.name : '',
-               item.label ? item.label.title : '',
-               item.publish_date,
-               item.archived]
+               item.label ? item.label.title : '']
     end
 
     table = Terminal::Table.new title: 'All Movies',
-                                headings: %w[ID Title Genre Author Source Label Publish_Date Archived], rows: rows
+                                headings: %w[ID Title Silent Source Publish_Date Archived Genre Author Label],
+                                rows: rows
     puts table
   end
 

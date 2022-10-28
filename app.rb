@@ -11,12 +11,6 @@ require_relative './classes/author'
 
 class App
   def initialize
-    # @items = []
-    # @genres = []
-    # @authors = []
-    # @labels = []
-    # @sources = []
-
     @items = LoadData.load_items || []
     @genres = LoadData.load_genres(@items) || []
     @authors = LoadData.load_authors(@items) || []
@@ -72,7 +66,7 @@ class App
         SaveData.save_authors(@authors)
         SaveData.save_labels(@labels)
         SaveData.save_sources(@sources)
-        # system 'clear'
+        system 'clear'
         puts 'See you next time!'
         break
       end

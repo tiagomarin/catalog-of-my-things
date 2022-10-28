@@ -23,15 +23,17 @@ class MusicAlbum < Item
       rows << [item.id,
                item.title,
                item.genre ? item.genre.name : '',
+               item.on_spotify,
+               item.publish_date,
+               item.archived,
                item.author ? item.author.first_name : '',
                item.source ? item.source.name : '',
-               item.label ? item.label.title : '',
-               item.publish_date,
-               item.archived]
+               item.label ? item.label.title : '']
     end
 
     table = Terminal::Table.new title: 'All Music Albums',
-                                headings: %w[ID Title Genre Author Source Label Publish_Date Archived], rows: rows
+                                headings: %w[ID Title Genre On_Spotify Publish_date Archived Author Source Label],
+                                rows: rows
     puts table
   end
 
