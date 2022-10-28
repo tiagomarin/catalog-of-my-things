@@ -58,7 +58,7 @@ class Game < Item
     print 'Is it a multiplayer game? [Y/N]: '
     multiplayer = true if gets.chomp.to_s.downcase == 'y'
 
-    print 'when is the last played at? [yyy-mm-dd]: '
+    print 'when is the last played at? [yyyy-mm-dd]: '
     last_played_at = gets.chomp.to_s
 
     game = Game.new(title, publish_date, multiplayer, last_played_at)

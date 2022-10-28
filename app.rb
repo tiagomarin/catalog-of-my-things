@@ -11,15 +11,15 @@ require_relative './classes/author'
 
 class App
   def initialize
-    @items = []
+    # @items = []
     # @genres = []
-    @authors = []
+    # @authors = []
     # @labels = []
     # @sources = []
 
-    # @items = LoadData.load_items || []
+    @items = LoadData.load_items || []
     @genres = LoadData.load_genres(@items) || []
-    # @authors = LoadData.load_authors || []
+    @authors = LoadData.load_authors(@items) || []
     @labels = LoadData.load_labels(@items) || []
     @sources = LoadData.load_sources(@items) || []
   end
@@ -69,7 +69,7 @@ class App
         # save data on JSON files when exit the program
         SaveData.save_items(@items)
         SaveData.save_genres(@genres)
-        # SaveData.save_authors(@authors)
+        SaveData.save_authors(@authors)
         SaveData.save_labels(@labels)
         SaveData.save_sources(@sources)
         # system 'clear'

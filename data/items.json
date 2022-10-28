@@ -1,3 +1,11 @@
 [
-  null
+  {
+    "type": "Game",
+    "id": 708,
+    "title": "dota",
+    "publish_date": "2020-10-26",
+    "multiplayer": true,
+    "last_played_at": "2010-10-26",
+    "author": 96
+  }
 ]

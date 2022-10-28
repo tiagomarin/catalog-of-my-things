@@ -2,6 +2,8 @@ require_relative '../classes/movie'
 require_relative '../classes/source'
 require_relative '../classes/music_album'
 require_relative '../classes/genre'
+require_relative '../classes/game'
+require_relative '../classes/author'
 require 'json'
 require 'pry'
 
@@ -21,7 +23,9 @@ class LoadData
                                 item['cover_state'],
                                 item['id']))
       when 'Game'
-        puts 'game'
+        items_arr.push(Game.new(item['title'], item['publish_date'], item['multiplayer'], item['last_played_at'], item['id']))
+      when 'Music Album'
+        puts 'Music'
       else
         items_arr.push(MusicAlbum.new(item['title'], item['publish_date'], item['on_spotify'], item['id']))
       end
@@ -84,5 +88,24 @@ class LoadData
       genres_arr.push(new_genre)
     end
     genres_arr
+  end
+
+  def self.load_authors(items)
+    file_path = './data/authors.json'
+    authors_file = File.open(file_path)
+
+    authors_arr = []
+
+    JSON.parse(authors_file.read).each do |author|
+      new_author = Author.new(author['first_name'], author['last_name'], author['id'])
+
+      author['items_ids'].each do |item_id|
+        items.each do |item|
+          new_author.add_item(item) if item.id == item_id
+        end
+      end
+      authors_arr.push(new_author)
+    end
+    authors_arr
   end
 end
