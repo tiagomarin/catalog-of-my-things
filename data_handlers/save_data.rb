@@ -78,7 +78,7 @@ class SaveData
     end
     File.write(file_path, JSON.pretty_generate(labels_data))
   end
-  
+
   def self.save_genres(genres)
     file_path = './data/genres.json'
     genres_data = genres.map do |e|

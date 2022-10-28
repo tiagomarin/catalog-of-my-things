@@ -66,6 +66,7 @@ class LoadData
     end
     labels_arr
   end
+
   def self.load_genres(items)
     file_path = './data/genres.json'
     genres_file = File.open(file_path)
