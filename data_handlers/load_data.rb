@@ -23,7 +23,8 @@ class LoadData
                                 item['cover_state'],
                                 item['id']))
       when 'Game'
-        items_arr.push(Game.new(item['title'], item['publish_date'], item['multiplayer'], item['last_played_at'], item['id']))
+        items_arr.push(Game.new(item['title'], item['publish_date'], item['multiplayer'], item['last_played_at'],
+                                item['id']))
       when 'Music Album'
         puts 'Music'
       else
