@@ -30,7 +30,17 @@ class SaveData
           label_id: item.label ? item.label.id : ''
         }
       when 'Game'
-        puts 'game'
+        {
+          type: item.class.name,
+          id: item.id,
+          title: item.title,
+          publish_date: item.publish_date,
+          multiplayer: item.multiplayer,
+          last_played_at: item.last_played_at,
+          author: item.author ? item.author.id : ''
+        }
+      when 'Music Album'
+        puts 'Music'
       else
         {
           type: item.class.name,
@@ -78,7 +88,7 @@ class SaveData
     end
     File.write(file_path, JSON.pretty_generate(labels_data))
   end
-  
+
   def self.save_genres(genres)
     file_path = './data/genres.json'
     genres_data = genres.map do |e|
@@ -91,5 +101,20 @@ class SaveData
       }
     end
     File.write(file_path, JSON.pretty_generate(genres_data))
+  end
+
+  def self.save_authors(authors)
+    file_path = './data/authors.json'
+    authors_data = authors.map do |e|
+      items_ids = []
+      e.items.each { |item| items_ids.push(item.id) }
+      {
+        id: e.id,
+        first_name: e.first_name,
+        last_name: e.last_name,
+        items_ids: items_ids
+      }
+    end
+    File.write(file_path, JSON.pretty_generate(authors_data))
   end
 end

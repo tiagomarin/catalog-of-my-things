@@ -50,3 +50,22 @@ CREATE TABLE music_albums(
     PRIMARY KEY(id),
     CONSTRAINT fk_genre FOREIGN KEY(genre_id) REFERENCES genres(id)
 )
+
+CREATE TABLE authors(
+    id INT GENERATED ALWAYS AS IDENTITY,
+    first_name VARCHAR(100),
+    last_name   VARCHAR(100),
+    PRIMARY KEY(id)
+)
+
+CREATE TABLE game(
+    id INT GENERATED ALWAYS AS IDENTITY,
+    title VARCHAR(100),
+    publish_date DATE NOT NULL,
+    archived BOOLEAN,
+    multiplayer BOOLEAN,
+    last_played_at DATE NOT NULL,
+    author_id INT,
+    PRIMARY KEY(id),
+    CONSTRAINT fk_author FOREIGN KEY(author_id) REFERENCES authors(id)
+)

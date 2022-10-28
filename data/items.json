@@ -66,5 +66,14 @@
     "publish_date": "2022-03-18",
     "archived": false,
     "on_spotify": true
+  },
+  {
+    "type": "Game",
+    "id": 623,
+    "title": "dota",
+    "publish_date": "2013-10-26",
+    "multiplayer": true,
+    "last_played_at": "2020-10-26",
+    "author": 277
   }
 ]
